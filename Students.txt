@@ -1,0 +1,6 @@
+User name
+Password
+Number of times logged in
+Array list of questions taken
+Array lists of questions gotten wrong
+Array list of quizzes taken
