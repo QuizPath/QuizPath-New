@@ -1,5 +1,5 @@
 /*
- * Quiz Path Project
+ * Database for QuizPath website
  */
 package quiz.path.pkg9.pkg14.pkg14;
 
@@ -15,8 +15,8 @@ public class QuizPath91414 {
 
     private ArrayList<Question> allQuestions = new ArrayList<Question>();
     private ArrayList<Question> questionsForQuiz = new ArrayList<Question>();
-    
-    public void readFromFile()
+    //reads all questions from a file into the database
+    public void readQuestionsFromFile()
     {
         BufferedReader reader=null;
         try {
@@ -51,13 +51,13 @@ public class QuizPath91414 {
             }
         }
      }
-    
+    //prints all questions from database
     public void printQuestions()
     {
         for(int i=0;i<allQuestions.size();i++)
             System.out.println(allQuestions.get(i));
     }
-    
+    //sorts through questions data base and uses specifications to make list of questions for quiz
     public void getQuestionsForQuiz()
     {
         ArrayList<Question> possibleQuestions = new ArrayList<Question>();
@@ -100,7 +100,7 @@ public class QuizPath91414 {
         }
         printQuizQuestions();
     }
-    
+    //prints questions for specific quiz
     public void printQuizQuestions()
     {
         for(int i=0;i<questionsForQuiz.size();i++)
@@ -110,7 +110,7 @@ public class QuizPath91414 {
             System.out.println(q.getQuestion());
         }
     }
-    
+    //runs main menu of the program
     public void menu()
     {
         Scanner in  = new Scanner (System.in);
@@ -128,7 +128,7 @@ public class QuizPath91414 {
     
     public void run()
     {
-        readFromFile();
+        readQuestionsFromFile();
         menu();
     }
     
