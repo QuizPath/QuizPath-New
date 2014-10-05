@@ -111,11 +111,25 @@ public class QuizPath91414 {
         }
     }
     
+    public void menu()
+    {
+        Scanner in  = new Scanner (System.in);
+        String selected="";
+        while(!selected.equals("3"))
+        {
+            System.out.println("Enter:\n1. To print all questions\n2. To print questions that would show up on quiz\n3. To Quit");
+            selected=in.nextLine();
+            if (selected.equals("1"))
+                printQuestions();
+            else if(selected.equals("2"))
+                getQuestionsForQuiz();
+        }
+    }
+    
     public void run()
     {
         readFromFile();
-        //printQuestions();
-        getQuestionsForQuiz();
+        menu();
     }
     
     public static void main(String[] args) {
